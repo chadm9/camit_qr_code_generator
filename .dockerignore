@@ -1,0 +1,7 @@
+.git
+.idea
+.dockerignore
+Dockerfile
+formatSample.js
+*.md
+node_modules

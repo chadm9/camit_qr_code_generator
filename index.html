@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMIT Device WIFI QR Code Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/logo.png" alt="CAMIT Logo" class="logo">
+            <h1>CAMIT Device WIFI QR Code Generator</h1>
+            <p class="subtitle">Enter network credentials to generate a secure configuration QR code.</p>
+        </header>
+
+        <main>
+            <form id="qr-form">
+                <div class="form-group">
+                    <label for="ssid">Network Name (SSID)</label>
+                    <input type="text" id="ssid" name="ssid" placeholder="Enter WiFi SSID" required autocomplete="off">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Network Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter WiFi Password" required>
+                </div>
+
+                <button type="submit" class="btn-generate">
+                    <span>Generate QR Code</span>
+                    <svg viewBox="0 0 24 24" fill="none" class="btn-icon">
+                        <path d="M12 4v16m8-8H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="modal-overlay" id="qr-modal">
+        <div class="modal">
+            <button class="modal-close" id="close-modal" aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h2>Your QR Code</h2>
+            <div id="qrcode-container"></div>
+            <p class="modal-instructions">Scan this with your CAMIT device to connect to the network.</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
